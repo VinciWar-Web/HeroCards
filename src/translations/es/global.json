@@ -1,0 +1,17 @@
+{
+	"name": "Nombre",
+	"spanish": "Español",
+	"english": "Ingles",
+	"publisher": "Editorial",
+	"see-hero": "Ver Héroe",
+	"place-of-birth": "Lugar de Nacimiento",
+	"sex": "Sexo",
+	"height": "Altura",
+	"weight": "Peso",
+	"item-shown": "Articulos Mostrados",
+	"home": "Inicio",
+	"search": "Búsqueda",
+	"look-for-a-hero": "Busca un héroe",
+	"without-results": "Sin resultado"
+
+}

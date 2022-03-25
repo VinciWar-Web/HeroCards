@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #e7e7e7;
+}
+
+/*Estilos paginador*/
+
+.paginationBttns {
+  width: 100%;
+  height: 55px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-top: 35px;
+}
+
+.paginationBttns a {
+  border:1px solid #FF452B; 
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  color: #263238;
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: #263238;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: #263238;
+}
+
+/*Estilos Select Pie*/
+
+.footerSelect{
+  border:1px solid #FF452B;
+  border-radius: 5px;
+  color: #263238;
+  background-color: #e7e7e7;
+  padding: 5px;
+}
+
+
+
+/*Estilos Lenguaje*/
+
+.icon{ 
+  width: 30px;
+  height: auto;
+}
+
+.Li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+} 
+
+
+.nav .Li .Ul{
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: #bdbcbc 1px 1px 8px;
+  width: 105px;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.Li3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Ul3{
+  list-style: none;
+  margin-top: 5px;
+  margin-right: 160px;
+} 
+
+.nav3 .Li3 .Ul3{
+  background-color: #f3f4f6;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: #bdbcbc 1px 1px 8px;
+  width: 250px;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.nav3 .Li3:hover > .Ul3{
+  opacity: 1;
+  height:100%;
+}
+
+.nav .Li:hover > .Ul{
+  opacity: 1;
+  height:100%;
+}
+
+.btn-flag{
+  color: #979696;
+  margin-top: 5px;
+  display: flex;
+  transition: all 0.4s;
+}
+
+.btn-flag:hover{
+  color: #000;
+}
+
+.flags{
+  width: 25px;
+  margin-top: 4px;
+  margin-right: 5px;
+}
+
