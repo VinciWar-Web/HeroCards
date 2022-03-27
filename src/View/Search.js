@@ -62,15 +62,12 @@ export const Search = () => {
         { ModalViewHero && <HeroView /> }
 
         <div className='pt-28 mobile:pt-24'>
-            
             <div className='flex justify-center'>
-
                 <div className='flex justify-around bg-gray-100 rounded-lg py-4 mt-6 w-11/12'>
                     <form
                         className="w-11/12 bg-transparent flex justify-between"
                         onSubmit={handleSubmit}
                     >
-
                         <input
                             type="text"
                             autoComplete='off'
@@ -80,7 +77,6 @@ export const Search = () => {
                             onChange={ handleInputChange }
                             value={ search }
                         />
-
                         <button>
                             <img
                                 className="mx-5 cursor-pointer"
@@ -90,8 +86,6 @@ export const Search = () => {
                         </button>
                     </form>
                 </div>
-
-
             </div>
             
             <div>

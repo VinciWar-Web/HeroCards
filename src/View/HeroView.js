@@ -14,19 +14,17 @@ export const HeroView = () => {
   //Registro
   const { HeroDetailed } = useSelector((state) => state.heroAll)
 
-  //Desestructuramos
-  const { appearance, biography, name } = HeroDetailed
-  
-  const { gender, height, weight } = appearance
-  const { fullName, placeOfBirth, publisher } = biography
+  //Validamos si el nombre existe y si no existe, insertamos el nombre del nickname del heroe
+  let nameHero
 
-  //Validamos si el nombre existe
-  let NameHero
-
-  if( fullName === "" || fullName === null || fullName === undefined ){
-    NameHero = name
+  if( 
+      HeroDetailed.biography.fullName === "" || 
+      HeroDetailed.biography.fullName === null || 
+      HeroDetailed.biography.fullName === undefined 
+  ){
+    nameHero = HeroDetailed.name
   }else{
-    NameHero = fullName
+    nameHero = HeroDetailed.biography.fullName
   }
   
   //Controlador Cierre de Modal
@@ -41,7 +39,7 @@ export const HeroView = () => {
 
           <div className="flex justify-between">
             <div className='mt-3 ml-6'>
-              <p className="text-1xl text-officialColorText font-nun font-extrabold tablet:text-2xl">{ name }</p>
+              <p className="text-1xl text-officialColorText font-nun font-extrabold tablet:text-2xl">{ HeroDetailed.name }</p>
             </div>
             <div
                 onClick={handleCloseModal}
@@ -58,7 +56,7 @@ export const HeroView = () => {
                 <div className="w-93/0 flex flex-col">
                   <label className="text-gray-500 mb-2">{t("name")}</label>
                   <div className="appearance-none bg-gray-200 text-gray-700 rounded w-full h-12 py-3 px-3 focus:outline-none">
-                    <p>{ NameHero }</p>
+                    <p>{ nameHero }</p>
                   </div>
                 </div>
               </div>
@@ -67,7 +65,7 @@ export const HeroView = () => {
                 <div className="w-93/0 flex flex-col">
                   <label className="text-gray-500 mb-2">{t("place-of-birth")}</label>
                   <div className="appearance-none bg-gray-200 text-gray-700 rounded w-full h-12 py-3 px-3 focus:outline-none">
-                    <p>{ placeOfBirth }</p>
+                    <p>{ HeroDetailed.biography.placeOfBirth }</p>
                   </div>
                 </div>
               </div>
@@ -76,7 +74,7 @@ export const HeroView = () => {
                 <div className="w-93/0 flex flex-col">
                   <label className="text-gray-500 mb-2">{t("publisher")}</label>
                   <div className="appearance-none bg-gray-200 text-gray-700 rounded w-full h-12 py-3 px-3 focus:outline-none">
-                    <p>{ publisher }</p>
+                    <p>{ HeroDetailed.biography.publisher }</p>
                   </div>
                 </div>
               </div>
@@ -85,7 +83,7 @@ export const HeroView = () => {
                 <div className="w-93/0 flex flex-col">
                   <label className="text-gray-500 mb-2">{t("sex")}</label>
                   <div className="appearance-none bg-gray-200 text-gray-700 rounded w-full h-12 py-3 px-3 focus:outline-none">
-                    <p>{ gender }</p>
+                    <p>{ HeroDetailed.appearance.gender }</p>
                   </div>
                 </div>
               </div>
@@ -94,7 +92,7 @@ export const HeroView = () => {
                 <div className="w-93/0 flex flex-col">
                   <label className="text-gray-500 mb-2">{t("height")}</label>
                   <div className="appearance-none bg-gray-200 text-gray-700 rounded w-full h-12 py-3 px-3 focus:outline-none">
-                    <p>{ height[1] }</p>
+                    <p>{ HeroDetailed.appearance.height[1] }</p>
                   </div>
                 </div>
               </div>
@@ -103,14 +101,14 @@ export const HeroView = () => {
                 <div className="w-93/0 flex flex-col">
                   <label className="text-gray-500 mb-2">{t("weight")}</label>
                   <div className="appearance-none bg-gray-200 text-gray-700 rounded w-full h-12 py-3 px-3 focus:outline-none">
-                    <p>{ weight[1] }</p>
+                    <p>{ HeroDetailed.appearance.weight[1] }</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className='flex justify-center mr-0 mt-6 miniLaptop:justify-end miniLaptop:mr-8'>
-              <img className='rounded-xl mr-3 shadow-md w-40 miniLaptop:w-auto' src={HeroDetailed.images.lg} alt="Hero" />
+              <img className='rounded-xl mr-3 shadow-md w-40 miniLaptop:w-auto' src={ HeroDetailed.images.lg } alt="Hero" />
             </div>
 
           </div>

@@ -19,6 +19,5 @@ test('render data api', async() => {
 	const resp = await fetch(`https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json`);
 	const body = await resp.json();
 
-  expect(body.includes()).toBe( false )
-
+  expect(!body.length).toBe( false )
 });
